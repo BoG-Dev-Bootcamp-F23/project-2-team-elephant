@@ -15,6 +15,7 @@ export default function Login() {
     async function handleClick(email, password, router) {
         try {
             setErrorMessage("");
+            console.log("handleClick");
             const response = await fetch("/api/user/verify", {
                 method: "POST",
                 headers: {
@@ -26,16 +27,14 @@ export default function Login() {
                 })
             });
             const data = await response.json();
-            console.log(data);
-            console.log(Object.keys(data).length > 0);
             if (response.status === 200) {
-                console.log(data.id);
                 setUserID(data.id);
                 setAdmin(data.admin);
                 setFullName(data.fullName);
                 router.push("/home");
             }
         } catch (e) {
+            console.log(e);
             setErrorMessage("User does not exist!");
         }
     }
