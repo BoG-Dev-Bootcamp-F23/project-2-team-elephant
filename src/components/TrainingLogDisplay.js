@@ -17,7 +17,6 @@ export default function TrainingLogDisplay() {
 
     return (
         <div className={styles.allLogsContainer}>
-            <Header/>
             <div className={styles.logContainer}>
                 {allLogs?.map((data) => {
                     return (

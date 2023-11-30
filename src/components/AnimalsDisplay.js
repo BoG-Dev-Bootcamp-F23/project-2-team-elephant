@@ -17,7 +17,6 @@ export default function AnimalsDisplay() {
 
     return (
         <div className={styles.allAnimalsContainer}>
-            <Header/>
             <div className={styles.animalContainer}>
                 {allAnimals?.map((data) => {
                     return (

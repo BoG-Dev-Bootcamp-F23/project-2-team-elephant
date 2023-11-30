@@ -17,7 +17,6 @@ export default function UsersDisplay() {
 
     return (
         <div className={styles.allUsersContainer}>
-            <Header/>
             <div className={styles.userContainer}>
                 {allUsers?.map((data) => {
                     return (
