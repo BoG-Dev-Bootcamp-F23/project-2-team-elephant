@@ -15,7 +15,6 @@ export default function Login() {
     async function handleClick(email, password, router) {
         try {
             setErrorMessage("");
-            console.log("handleClick");
             const response = await fetch("/api/user/verify", {
                 method: "POST",
                 headers: {
@@ -27,11 +26,12 @@ export default function Login() {
                 })
             });
             const data = await response.json();
+            console.log(data);
             if (response.status === 200) {
                 setUserID(data.id);
                 setAdmin(data.admin);
                 setFullName(data.fullName);
-                router.push("/home");
+                router.push("/Dashboard");
             }
         } catch (e) {
             console.log(e);

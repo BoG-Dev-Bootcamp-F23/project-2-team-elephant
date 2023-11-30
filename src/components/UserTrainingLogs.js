@@ -4,7 +4,7 @@ import styles from '@/styles/TrainingLogDisplay.module.css';
 import { useState, useEffect } from 'react';
 import TrainingLogCard from './TrainingLogCard';
 
-export default function displayUserTrainingLogs() {
+export default function UserTrainingLogs() {
     const [ userTraining, setUserTraining ] = useState([]);
     const { userID } = useAuth();
 
@@ -15,11 +15,12 @@ export default function displayUserTrainingLogs() {
             setUserTraining(data);
         }
         getUserTraining();
+        console.log(userTraining);
+        console.log(userID);
     }, [])
 
     return (
         <div className={styles.allLogsContainer}>
-            <Header/>
             <div className={styles.logContainer}>
                 {userTraining?.map((data) => {
                     return data.user === userID ? (
@@ -29,6 +30,5 @@ export default function displayUserTrainingLogs() {
 
             </div>
         </div> 
-    )
-
+    );
 }

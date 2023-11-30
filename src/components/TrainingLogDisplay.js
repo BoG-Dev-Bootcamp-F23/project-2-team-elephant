@@ -3,7 +3,7 @@ import Header from '@/components/Header';
 import styles from '@/styles/TrainingLogDisplay.module.css';
 import { useState, useEffect } from 'react';
 
-export default function displayTrainingLogs() {
+export default function TrainingLogDisplay() {
     const [ allLogs, setAllLogs ] = useState([]);
 
     useEffect(() => {

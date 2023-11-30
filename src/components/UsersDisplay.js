@@ -3,7 +3,7 @@ import Header from '@/components/Header';
 import styles from '@/styles/UsersDisplay.module.css';
 import { useState, useEffect } from 'react';
 
-export default function displayUsers() {
+export default function UsersDisplay() {
     const [ allUsers, setAllUsers ] = useState([]);
 
     useEffect(() => {

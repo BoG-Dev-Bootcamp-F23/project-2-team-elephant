@@ -62,7 +62,7 @@ export default function CreateAccount() {
                 }
                 <label className={styles.label}>Admin Access
                     <input type="checkbox" className={styles.checkbox} />
-                    <span class={styles.checkmark} onClick={(e) => {setAdmin(getComputedStyle(e.target, '::after').content === 'none')}}></span>
+                    <span className={styles.checkmark} onClick={(e) => {setAdmin(getComputedStyle(e.target, '::after').content === 'none')}}></span>
                 </label>
                 <button type="button" className={styles.signUpButton} onClick={() => {handleClick()}}>Sign Up</button>
                 <p>Don't have an account? <Link href="/"><b className={styles.signIn}>Sign in</b></Link></p>

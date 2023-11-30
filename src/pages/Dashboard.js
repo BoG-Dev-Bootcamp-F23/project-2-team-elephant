@@ -6,12 +6,33 @@ import TrainingLogCard from '@/components/TrainingLogCard';
 import Sidebar from '@/components/Sidebar';
 import Header from '@/components/Header';
 import { useAuth } from '@/contexts/useAuth';
+import UserTrainingLogs from '@/components/UserTrainingLogs';
+import UserAnimals from '@/components/UserAnimals';
+import User from '../../server/mongodb/models/User';
+import AnimalsDisplay from '@/components/AnimalsDisplay';
+import TrainingLogDisplay from '@/components/TrainingLogDisplay';
+import UsersDisplay from '@/components/UsersDisplay';
 
 export default function Dashboard() {
 
     const [training, setTraining] = useState(false);
     const [animalCards, setAnimalCards] = useState([]);
     const [trainingCard, setTrainingCard] = useState([]);
+    const [visible, setVisible] = useState("training-logs");
+
+    let visibleComponent;
+
+    if (visible === "training-logs") {
+      visibleComponent = <UserTrainingLogs />;
+    } else if (visible === "animals") {
+      visibleComponent = <UserAnimals />;
+    } else if (visible === "admin-training") {
+      visibleComponent = <TrainingLogDisplay />
+    } else if (visible === "admin-animals") {
+      visibleComponent = <AnimalsDisplay />
+    } else if (visible === "admin-users") {
+      visibleComponent = <UsersDisplay />
+    }
 
     async function getTrainingData() {
         try {
@@ -55,22 +76,8 @@ export default function Dashboard() {
             <Header className = {styles.headerContainer}/>
           {/* </div> */}
           <div className={styles.mainContent}>
-            <Sidebar  setInfo={setTraining} className = {styles.sideBarContainer} />
-            <div className={styles.contentContainer}>
-              {training ? (
-                <div className={styles.trainingCards}>
-                  {trainingCard?.map((card) => (
-                    <TrainingLogCard {...card} key={card._id} />
-                  ))}
-                </div>
-              ) : (
-                <div className={styles.AnimalCard}>
-                  {animalCards?.map((card) => (
-                    <AnimalCard {...card} key={card._id} />
-                  ))}
-                </div>
-              )}
-            </div>
+            <Sidebar visible={visible} setVisible={setVisible} setInfo={setTraining} className = {styles.sideBarContainer} />
+            {visibleComponent}
           </div>
         </div>
         </>
