@@ -23,6 +23,7 @@
 }
 .inactivePanel:hover {
     background-color: hsl(0, 65%, 80%);
+    cursor: pointer;
 }
 
 
