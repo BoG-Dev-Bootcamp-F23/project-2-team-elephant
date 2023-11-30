@@ -9,11 +9,12 @@ export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const { setUserID, setAdmin, setFullName } = useAuth();
+    const [errorMessage, setErrorMessage] = useState("");
     const router = useRouter();
 
     async function handleClick(email, password, router) {
-        const passwordBox = document.getElementById("passwordBox");
         try {
+            setErrorMessage("");
             const response = await fetch("/api/user/verify", {
                 method: "POST",
                 headers: {
@@ -27,15 +28,16 @@ export default function Login() {
             const data = await response.json();
             console.log(data);
             console.log(Object.keys(data).length > 0);
-            if (Object.keys(data).length > 0) {
+            if (response.status === 200) {
                 console.log(data.id);
                 setUserID(data.id);
                 setAdmin(data.admin);
                 setFullName(data.fullName);
-                router.push("/Dashboard");
+
+                router.push("/side");
             }
         } catch (e) {
-            console.log(e);
+            setErrorMessage("User does not exist!");
         }
     }
 
@@ -45,7 +47,10 @@ export default function Login() {
             <div className={styles.loginBox}>
                 <h1>Login</h1>
                 <input type="email" value={email} onChange={e => { setEmail(e.currentTarget.value); }} placeholder='Email' className={styles.input} />
-                <input id="passwordBox" type="password" value={password} onChange={e => { setPassword(e.currentTarget.value); }} placeholder='Password' className={styles.input} />
+                <input type="password" value={password} onChange={e => { setPassword(e.currentTarget.value); }} placeholder='Password' className={styles.input} />
+                {
+                    (errorMessage !== "") ? <p style={{fontFamily: "'Heebo', sans-serif", textAlign: "center"}} id="error">{errorMessage}</p> : <></>
+                }
                 <button type="button" className={styles.logInButton} onClick={() => {handleClick(email, password, router)}}>Log In</button>
                 <p>Don't have an account? <Link href="create-account"><b className={styles.signUp}>Sign up</b></Link></p>
             </div>
