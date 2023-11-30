@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: solid 1px grey;
-    height: 50px;
+    height: 7.5vh;
     padding: 0 2%;
     font-size: 20px;
     box-sizing: content-box;
@@ -14,7 +14,7 @@
     display: flex;
     align-items: center;
     width: 10%;
-    height: 50px;
+    height: 7.5vh;
     justify-content: space-between;
     font-size: 14px;
 }
