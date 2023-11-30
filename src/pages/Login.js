@@ -33,6 +33,7 @@ export default function Login() {
                 setUserID(data.id);
                 setAdmin(data.admin);
                 setFullName(data.fullName);
+
                 router.push("/side");
             }
         } catch (e) {
