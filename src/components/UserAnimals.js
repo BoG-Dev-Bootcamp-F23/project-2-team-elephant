@@ -4,7 +4,7 @@ import { useAuth } from '@/contexts/useAuth';
 import styles from '@/styles/AnimalsDisplay.module.css';
 import { useState, useEffect } from 'react';
 
-export default function UserAnimals() {
+export default function UserAnimals(props) {
     const [ userAnimals, setUserAnimals ] = useState([]);
     const { userID } = useAuth();
 
@@ -19,7 +19,7 @@ export default function UserAnimals() {
 
     return (
         <div className={styles.allAnimalsContainer}>
-            <AnimalHeader />
+            <AnimalHeader click={props.change} />
             <div className={styles.animalContainer}>
                 {userAnimals?.map((data) => {
                     return data.owner === userID ? (

@@ -3,6 +3,7 @@ import { useAuth } from '@/contexts/useAuth';
 import styles from '@/styles/TrainingLogDisplay.module.css';
 import { useState, useEffect } from 'react';
 import TrainingLogCard from './TrainingLogCard';
+import TrainingLogHeader from './TrainingLogHeader';
 
 export default function UserTrainingLogs() {
     const [ userTraining, setUserTraining ] = useState([]);
@@ -21,6 +22,7 @@ export default function UserTrainingLogs() {
 
     return (
         <div className={styles.allLogsContainer}>
+            <TrainingLogHeader />
             <div className={styles.logContainer}>
                 {sortedUserTraining?.map((data) => {
                     return data.user === userID ? (

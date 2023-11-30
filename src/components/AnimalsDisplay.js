@@ -3,7 +3,7 @@ import AnimalHeader from './AnimalHeader';
 import styles from '@/styles/AnimalsDisplay.module.css';
 import { useState, useEffect } from 'react';
 
-export default function AnimalsDisplay() {
+export default function AnimalsDisplay(props) {
     const [ allAnimals, setAllAnimals ] = useState([]);
 
     useEffect(() => {

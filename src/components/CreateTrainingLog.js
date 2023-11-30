@@ -2,7 +2,7 @@ import React from "react";
 import styles from '..//styles/CreateAnimalCard.module.css';
 import { useState, useEffect } from "react";
 
-export default function CreateAnimalCard(props) {
+export default function CreateTrainingLog(props) {
 
     const {user} = props;
     const [title, setTitle] = useState("");

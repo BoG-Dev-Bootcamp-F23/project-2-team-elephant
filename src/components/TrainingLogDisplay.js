@@ -3,7 +3,7 @@ import TrainingLogHeader from './TrainingLogHeader';
 import styles from '@/styles/TrainingLogDisplay.module.css';
 import { useState, useEffect } from 'react';
 
-export default function TrainingLogDisplay() {
+export default function TrainingLogDisplay(props) {
     const [ allLogs, setAllLogs ] = useState([]);
 
     useEffect(() => {
@@ -19,7 +19,7 @@ export default function TrainingLogDisplay() {
 
     return (
         <div className={styles.allLogsContainer}>
-            <TrainingLogHeader />
+            <TrainingLogHeader setVisible={props.setVisible} />
             <div className={styles.logContainer}>
                 {allLogs?.map((data) => {
                     return (
