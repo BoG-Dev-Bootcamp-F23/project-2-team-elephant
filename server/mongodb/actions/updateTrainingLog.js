@@ -8,15 +8,10 @@ export default async function updateTrainingLog(data) {
     try {
         await connectDB();
         const { id } = data;
-        const newTrainingLog = TrainingLog.findByIdAndUpdate(id, {
-            _id: data._id,
-            user: data.user,
-            animal: data.animal,
+        const newTrainingLog = await TrainingLog.findByIdAndUpdate(id, {
             title: data.title,
-            date: data.date,
             description: data.description, 
             hours: data.hours
-
         });
         if (!newTrainingLog) {
             throw new InvalidInformationError();

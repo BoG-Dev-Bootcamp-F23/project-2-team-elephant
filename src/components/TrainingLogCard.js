@@ -13,7 +13,7 @@ import { useAuth } from "@/contexts/useAuth";
 
 
 export default function TrainingLogCard(props) {
-    const {all, title, date, description, hours, user, animal} = props;
+    const {all, title, date, description, hours, user, animal, setVisible} = props;
 
     const { fullName } = useAuth();
 
@@ -202,7 +202,7 @@ export default function TrainingLogCard(props) {
             </div>
 
             <div className={styles.farRight}>
-                    <button onClick={() => {props.setVisible("edit-training")}} className={styles.editButton}>
+                    <button onClick={() => {setVisible("edit-training"); props.setTrainingCardInfo(props.id)}} className={styles.editButton}>
                         <Image src={trainingIcon} width={30} height={30} className={styles.icon}></Image>
                     </button>
             </div>

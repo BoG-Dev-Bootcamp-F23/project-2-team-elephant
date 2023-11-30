@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 
 export default function TrainingLogDisplay(props) {
     const [ allLogs, setAllLogs ] = useState([]);
+    console.log(props.setVisible)
 
     useEffect(() => {
         async function getLogs() {
@@ -22,7 +23,7 @@ export default function TrainingLogDisplay(props) {
             <div className={styles.logContainer}>
                 {allLogs?.map((data) => {
                     return (
-                        <TrainingLogCard all={true} setVisible = {props.setVisible} title={data.title} date={data.date} description={data.description} hours={data.hours} user={data.user} animal={data.animal}/>
+                        <TrainingLogCard all={true} setTrainingCardInfo = {props.setTrainingCardInfo} setVisible = {props.setVisible} id = {data._id} title={data.title} date={data.date} description={data.description} hours={data.hours} user={data.user} animal={data.animal}/>
                     )
                 })}
             </div>

@@ -19,22 +19,23 @@ export default function Dashboard() {
     const [training, setTraining] = useState(false);
     const [animalCards, setAnimalCards] = useState([]);
     const [trainingCard, setTrainingCard] = useState([]);
-    const [visible, setVisible] = useState("training-logs");
+    const [visible, setVisible] = useState("admin-training");
+    const [trainingCardID, setTrainingCardInfo] = useState("");
 
     let visibleComponent;
 
     if (visible === "training-logs") {
-      visibleComponent = <UserTrainingLogs setVisible = {setVisible}  />;
+      visibleComponent = <UserTrainingLogs setVisible = {setVisible} setTrainingCardInfo = {setTrainingCardInfo}  />;
     } else if (visible === "animals") {
       visibleComponent = <UserAnimals />;
     } else if (visible === "admin-training") {
-      visibleComponent = <TrainingLogDisplay setVisible = {setVisible} />
+      visibleComponent = <TrainingLogDisplay setVisible = {setVisible} setTrainingCardInfo = {setTrainingCardInfo} />
     } else if (visible === "admin-animals") {
       visibleComponent = <AnimalsDisplay />
     } else if (visible === "admin-users") {
       visibleComponent = <UsersDisplay />
     } else if (visible === "edit-training") {
-      visibleComponent = <EditTrainingLog/>
+      visibleComponent = <EditTrainingLog trainingCardID = {trainingCardID} />
     }
 
     async function getTrainingData() {
