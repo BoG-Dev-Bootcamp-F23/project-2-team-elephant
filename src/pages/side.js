@@ -22,6 +22,7 @@ export default function side() {
     return (
         <div className={styles.container}>
             <Dashboard></Dashboard>
+            {/* <TrainingLogDisplay></TrainingLogDisplay> */}
         </div>
     );
 }

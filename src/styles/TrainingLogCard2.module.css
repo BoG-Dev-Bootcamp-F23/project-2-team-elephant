@@ -1,0 +1,120 @@
+.mainCard {
+    height: 120px;
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    align-items: center;
+    background-color: white;
+    box-shadow: 4px 4px 4px 0px #00000040;
+    border-radius: 10px;
+    font-family: 'Heebo', sans-serif;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    height: 100%;
+    background-color: #070A52D9;
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: -30px;
+    padding: 10px;
+    padding-top: 20px;
+    align-items: center;
+}
+
+.day {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-weight: 800;
+    font-family: 'Oswald';
+    align-content: center;
+    font-size: 40px;
+    width: 120px;
+}
+
+.monthYear {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-weight: 300;
+    font-size: 20px;
+    font-family: 'Oswald';
+}
+
+.right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.leftRight {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 90px;
+    margin-right: 15px;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    color: #260101;
+    font-weight: 700;
+    font-family: 'Heebo', sans-serif;
+    align-content: center;
+    font-size: 30px;
+}
+
+.hours {
+    display: flex;
+    justify-content: center;
+    color: #999999;
+    font-weight: 510;
+    font-size: 20px;
+    font-family: 'Heebo', sans-serif;
+    align-content: center;
+}
+
+.middle {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    color: #999999;
+    font-weight: 500;
+    font-size: 20px;
+    font-family: 'Heebo', sans-serif;
+}
+
+.farRight {
+    display: flex;
+    gap: 80px;
+}
+
+.editButton {
+    display: flex;
+    padding-left: 0px;
+
+}
+
