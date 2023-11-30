@@ -99,7 +99,7 @@ export default function Dashboard() {
         <>
         <div className={styles.everything}>
           {/* <div className={styles.headerContainer}> */}
-            <Header className = {styles.headerContainer}/>
+            <Header/>
           {/* </div> */}
           <div className={styles.mainContent}>
             <Sidebar clicked={clicked} setClicked={setClicked} visible={visible} setVisible={setVisible} setInfo={setTraining} className = {styles.sideBarContainer} />
