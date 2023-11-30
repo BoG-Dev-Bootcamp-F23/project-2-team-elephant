@@ -21,23 +21,6 @@ export default function side() {
     const { userID } = useAuth();
     return (
         <div className={styles.container}>
-            {/* <Sidebar></Sidebar> */}
-            {/* <UserCard></UserCard>
-            <UserCard></UserCard>
-            <UserCard></UserCard> */}
-            {/* <Header></Header> */}
-            {/* <AnimalCard></AnimalCard> */}
-            <TrainingLogCard></TrainingLogCard>
-            {/* <UserCard admin = {admin} fullName = {fullName}></UserCard> */}
-            {/* <UsersDisplay></UsersDisplay> */}
-            {/* <TrainingLogDisplay></TrainingLogDisplay> */}
-            {/* <AnimalsDisplay></AnimalsDisplay> */}
-            {/* <UserAnimals></UserAnimals> */}
-            {/* <UserTrainingLogs></UserTrainingLogs> */}
-            {/* <Dashboard></Dashboard> */}
-            {/* <CreateAnimalCard user={userID}/> */}
-            {/* <CreateTrainingLog user={userID}/> */}
-            {/* <EditTrainingLog/> */}
             <Dashboard></Dashboard>
         </div>
     );
