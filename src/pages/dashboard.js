@@ -17,7 +17,7 @@ export default function Dashboard() {
   
     const [training, setTraining] = useState(false);
     const [animalCards, setAnimalCards] = useState([]);
-    const [trainingCard, setTrainingCard] = useState([]);
+    const [trainingCards, setTrainingCards] = useState([]);
     const [visible, setVisible] = useState("training-logs");
 
     let visibleComponent;

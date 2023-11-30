@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 1px grey;
+    height: 50px;
+    padding: 0 2%;
+    font-size: 20px;
+    background-color: white;
+}
+
+.create {
+    display: flex;
+    align-items: center;
+    width: 10.5%;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.icon:hover {
+    cursor: pointer;
+    opacity: 85%;
+}

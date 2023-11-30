@@ -1,5 +1,5 @@
 import TrainingLogCard from './TrainingLogCard';
-import Header from '@/components/Header';
+import TrainingLogHeader from './TrainingLogHeader';
 import styles from '@/styles/TrainingLogDisplay.module.css';
 import { useState, useEffect } from 'react';
 
@@ -19,6 +19,7 @@ export default function TrainingLogDisplay() {
 
     return (
         <div className={styles.allLogsContainer}>
+            <TrainingLogHeader />
             <div className={styles.logContainer}>
                 {allLogs?.map((data) => {
                     return (

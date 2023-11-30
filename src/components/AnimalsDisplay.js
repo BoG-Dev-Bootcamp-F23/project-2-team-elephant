@@ -1,5 +1,5 @@
 import AnimalCard from './AnimalCard';
-import Header from '@/components/Header';
+import AnimalHeader from './AnimalHeader';
 import styles from '@/styles/AnimalsDisplay.module.css';
 import { useState, useEffect } from 'react';
 
@@ -17,10 +17,11 @@ export default function AnimalsDisplay() {
 
     return (
         <div className={styles.allAnimalsContainer}>
+            <AnimalHeader />
             <div className={styles.animalContainer}>
                 {allAnimals?.map((data) => {
                     return (
-                        <AnimalCard name={data.name} breed={data.breed} owner={data.owner} hoursTrained={data.hoursTrained} profilePicture={data.profilePicture}/>
+                        <AnimalCard name={data.name} breed={data.breed} owner={data.owner} hoursTrained={data.hoursTrained}/>
                     )
                 })}
             </div>
