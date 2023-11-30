@@ -3,7 +3,6 @@ import styles from '..//styles/CreateTrainingLog.module.css';
 import { set } from "mongoose";
 import { useAuth } from "@/contexts/useAuth";
 import { useState, useEffect } from "react";
-import { filter } from "@chakra-ui/react";
 
 export default function EditTrainingLog(props) {
 

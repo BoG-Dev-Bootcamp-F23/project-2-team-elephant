@@ -26,7 +26,7 @@ export default function UserTrainingLogs(props) {
             <div className={styles.logContainer}>
                 {sortedUserTraining?.map((data) => {
                     return data.user === userID ? (
-                        <TrainingLogCard key={data._id} setTrainingCardInfo = {setTrainingCardInfo} setVisible = {props.setVisible} title={data.title} id = {data._id} date={data.date} description={data.description} hours={data.hours} user={data.user} animal={data.animal}/>
+                        <TrainingLogCard key={data._id} setTrainingCardInfo = {props.setTrainingCardInfo} setVisible = {props.setVisible} title={data.title} id = {data._id} date={data.date} description={data.description} hours={data.hours} user={data.user} animal={data.animal}/>
                     ) : null;
                 })}
 
