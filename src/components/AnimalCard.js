@@ -5,13 +5,16 @@ import connectDB from "../../server/mongodb";
 import User from "../../server/mongodb/models/User";
 import { Connection } from 'mongoose';
 import getOneUser from '../../server/mongodb/actions/getOneUser';
+import { useAuth } from '@/contexts/useAuth';
 
 
 
 export default function AnimalCard(props) {
     const {name, breed, owner, hoursTrained, profilePicture} = props;
+    const { fullName } = useAuth();
 
     const [realUser, setUser] = useState("");
+
 
 
     return (
@@ -26,7 +29,7 @@ export default function AnimalCard(props) {
                         <p> {name} - {breed} </p>
                     </div>
                     <div className = {styles.trainerHours}>
-                        <p> {realUser ? `${realUser} • Trained ${hoursTrained} hours` : 'Loading...'}</p>
+                        <p> {fullName} • Trained {hoursTrained} hours</p>
                     </div>
                 </div>
             </div>

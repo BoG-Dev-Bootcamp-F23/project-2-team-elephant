@@ -7,9 +7,9 @@ import Sidebar from '@/components/Sidebar';
 import Header from '@/components/Header';
 import { useAuth } from '@/contexts/useAuth';
 
-export default function Home() {
+export default function Dashboard() {
 
-    const [training, setTraining] = useState(true);
+    const [training, setTraining] = useState(false);
     const [animalCards, setAnimalCards] = useState([]);
     const [trainingCard, setTrainingCard] = useState([]);
 

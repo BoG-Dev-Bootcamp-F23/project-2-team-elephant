@@ -32,7 +32,7 @@ export default function Login() {
                 setUserID(data.id);
                 setAdmin(data.admin);
                 setFullName(data.fullName);
-                router.push("/home");
+                router.push("/Dashboard");
             }
         } catch (e) {
             console.log(e);
