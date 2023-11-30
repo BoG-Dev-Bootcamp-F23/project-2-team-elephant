@@ -16,28 +16,29 @@ export default function Sidebar(props) {
 
     return (
         <div className={styles.sideBarContainer}>
-            
-            <div className={styles.userContainer}>
-                <button className={(clicked === "training-logs") ? styles.activePanel : styles.inactivePanel} onClick={() => {props.setVisible("training-logs"); setClicked("training-logs")}}>
-                    <Image src={trainingIcon} width={30} height={30} className={styles.icon}></Image>
-                    Training logs</button>
-                <button className={(clicked === "animals") ? styles.activePanel : styles.inactivePanel} onClick={() => {props.setVisible("animals"); setClicked("animals")}}>
-                    <Image src={animalIcon} width={30} height={30} className={styles.icon}></Image>
-                    Animals</button>
-            </div>
+            <div>
+                <div className={styles.userContainer}>
+                    <button className={(clicked === "training-logs") ? styles.activePanel : styles.inactivePanel} onClick={() => {props.setVisible("training-logs"); setClicked("training-logs")}}>
+                        <Image src={trainingIcon} width={30} height={30} className={styles.icon}></Image>
+                        Training logs</button>
+                    <button className={(clicked === "animals") ? styles.activePanel : styles.inactivePanel} onClick={() => {props.setVisible("animals"); setClicked("animals")}}>
+                        <Image src={animalIcon} width={30} height={30} className={styles.icon}></Image>
+                        Animals</button>
+                </div>
 
-            {admin ? <div className={styles.adminContainer}>
-                <p className={styles.adminHeader}>Admin Access</p>
-                <button className={(clicked === "admin-training") ? styles.activePanel : styles.inactivePanel} onClick={() => {props.setVisible("admin-training"); setClicked("admin-training")}}>
-                    <Image src={adminTraining} width={30} height={30} className={styles.icon}></Image>
-                    All Training</button>
-                <button className={(clicked === "admin-animals") ? styles.activePanel : styles.inactivePanel} onClick={() => {props.setVisible("admin-animals"); setClicked("admin-animals")}}>
-                    <Image src={adminAnimals} width={30} height={30} className={styles.icon}></Image>
-                    All Animals</button>
-                <button className={(clicked === "admin-users") ? styles.activePanel : styles.inactivePanel} onClick={() => {props.setVisible("admin-users"); setClicked("admin-users")}}>
-                    <Image src={adminUsers} width={30} height={30} className={styles.icon}></Image>
-                    All Users</button>
-            </div> : <div className={styles.noAdmin}></div>}
+                {admin ? <div className={styles.adminContainer}>
+                    <p className={styles.adminHeader}>Admin Access</p>
+                    <button className={(clicked === "admin-training") ? styles.activePanel : styles.inactivePanel} onClick={() => {props.setVisible("admin-training"); setClicked("admin-training")}}>
+                        <Image src={adminTraining} width={30} height={30} className={styles.icon}></Image>
+                        All Training</button>
+                    <button className={(clicked === "admin-animals") ? styles.activePanel : styles.inactivePanel} onClick={() => {props.setVisible("admin-animals"); setClicked("admin-animals")}}>
+                        <Image src={adminAnimals} width={30} height={30} className={styles.icon}></Image>
+                        All Animals</button>
+                    <button className={(clicked === "admin-users") ? styles.activePanel : styles.inactivePanel} onClick={() => {props.setVisible("admin-users"); setClicked("admin-users")}}>
+                        <Image src={adminUsers} width={30} height={30} className={styles.icon}></Image>
+                        All Users</button>
+                </div> : <div className={styles.noAdmin}></div>}
+            </div>
 
             <div className={styles.userInfoContainer}>
                 

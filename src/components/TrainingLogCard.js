@@ -6,15 +6,14 @@ import connectDB from "../../server/mongodb";
 import User from "../../server/mongodb/models/User";
 import { userAgent } from "next/server";
 import { Heebo } from 'next/font/google'
+import { useAuth } from "@/contexts/useAuth";
 
 
 
 export default function TrainingLogCard(props) {
 
     const {title, date, description, hours, user, animal} = props;
-
-
-    const [realUser, setUser] = useState(null);
+    const { fullName } = useAuth();
 
     var year;
     var month;
@@ -64,20 +63,22 @@ export default function TrainingLogCard(props) {
                 <h1> {day} </h1>
                 <p> {month + " " + year}</p>
             </div>
-            <div className = {styles.trainingInfo}>
-                <div className = {styles.cardTitle}>
-                    <h1> {title} </h1>
-                    <p className={styles.hours}> • {hours} hours </p>
+            <div className={styles.cardContent}>
+                <div className = {styles.trainingInfo}>
+                    <div className = {styles.cardTitle}>
+                        <h1> {title} </h1>
+                        <p className={styles.hours}> • {hours} hours </p>
+                    </div>
+                    <div className = {styles.dogInfo}>
+                        {fullName} • {animal} • Lucy
+                    </div>
+                    <div className = {styles.trainingDescription}>
+                        {description}
+                    </div>
                 </div>
-                <div className = {styles.dogInfo}>
-                    {realUser} • {animal} • Lucy
+                <div className = {styles.editButton}>
+                    <p className= {styles.letter}> Edit</p>
                 </div>
-                <div className = {styles.trainingDescription}>
-                    {description}
-                </div>
-            </div>
-            <div className = {styles.editButton}>
-                <p className= {styles.letter}> Edit</p>
             </div>
         </div>
     );

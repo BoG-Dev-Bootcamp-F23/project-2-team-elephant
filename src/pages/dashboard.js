@@ -1,4 +1,4 @@
-import styles from '@/styles/Home.module.css'
+import styles from '@/styles/Dashboard.module.css'
 import Login from './Login';
 import AnimalCard from '@/components/AnimalCard';
 import { useState, useEffect } from 'react';
