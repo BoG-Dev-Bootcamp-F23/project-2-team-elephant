@@ -13,6 +13,7 @@ import { useState } from 'react';
 export default function Sidebar(props) {
     const { fullName, admin } = useAuth();
     const [clicked, setClicked] = useState("training-logs");
+    console.log(clicked);
 
     return (
         <div className={styles.sideBarContainer}>
@@ -21,7 +22,7 @@ export default function Sidebar(props) {
                     <button className={(clicked === "training-logs") ? styles.activePanel : styles.inactivePanel} onClick={() => {props.setVisible("training-logs"); setClicked("training-logs")}}>
                         <Image src={trainingIcon} width={30} height={30} className={styles.icon}></Image>
                         Training logs</button>
-                    <button className={(clicked === "animals") ? styles.activePanel : styles.inactivePanel} onClick={() => {props.setVisible("animals"); setClicked("animals")}}>
+                    <button className={(clicked === "animals") ? styles.activePanel : styles.inactivePanel} onClick={() => {props.setVisible("animals"); setClicked("animals");}}>
                         <Image src={animalIcon} width={30} height={30} className={styles.icon}></Image>
                         Animals</button>
                 </div>

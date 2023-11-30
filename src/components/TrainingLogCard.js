@@ -18,40 +18,13 @@ export default function TrainingLogCard(props) {
     const { fullName } = useAuth();
 
     const dayy = props.date.substring(8, 10);
-    var monthh = props.date.substring(5, 7);
-    if (monthh === "00") {
-        monthh = "JAN";
-    }  else if (monthh === "01") {
-        monthh = "FEB";
-    } else if (monthh === "02") {
-        monthh = "MAR";
-    } else if (monthh === "03") {
-        monthh = "APR";
-    } else if (monthh === "04") {
-        monthh = "MAY";
-    }else if (monthh === "05") {
-        monthh = "JUNE";
-    } else if (monthh === "06") {
-        monthh = "JULY";
-    } else if (monthh === "07") {
-        monthh = "AUG";
-    } else if (monthh === "08") {
-        monthh = "SEPT";
-    } else if (monthh === "09") {
-        monthh = "OCT";
-    } else if (monthh === "10") {
-        monthh = "NOV";
-    } else {
-        monthh = "DEC";
-    }
-
+    let currentDate = new Date(props.date);
+    var monthh = currentDate.toDateString().substring(4, 7).toUpperCase();
     const yearr = props.date.substring(0, 4);
 
     const monthYear = monthh + " - " + yearr;
 
-    var year;
-    var month;
-    var day;
+
 
     const [ allUsers, setAllUsers ] = useState([]);
 
@@ -134,7 +107,6 @@ export default function TrainingLogCard(props) {
                         <Image src={trainingIcon} width={30} height={30} className={styles.icon}></Image>
                     </button>
             </div>
-
         </div>
     )
 
