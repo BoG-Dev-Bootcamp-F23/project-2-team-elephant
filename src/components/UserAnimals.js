@@ -19,7 +19,7 @@ export default function UserAnimals(props) {
 
     return (
         <div className={styles.allAnimalsContainer}>
-            <AnimalHeader click={props.change} />
+            <AnimalHeader click={props.changeCreateAnimal} />
             <div className={styles.animalContainer}>
                 {userAnimals?.map((data) => {
                     return data.owner === userID ? (

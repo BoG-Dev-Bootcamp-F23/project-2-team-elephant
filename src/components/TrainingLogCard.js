@@ -97,7 +97,7 @@ export default function TrainingLogCard(props) {
                         </div>
                     </div>
                 </div>
-                <button onClick={() => {}} className={styles.buttonBox}>
+                <button onClick={props.click} className={styles.buttonBox}>
                     <Image src={trainingIcon} width={25} height={25} className={styles.icon}></Image>
                 </button>
             </div>

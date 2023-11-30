@@ -17,7 +17,7 @@ export default function AnimalsDisplay(props) {
 
     return (
         <div className={styles.allAnimalsContainer}>
-            <AnimalHeader />
+            <AnimalHeader click = {props.changeCreateAnimal} />
             <div className={styles.animalContainer}>
                 {allAnimals?.map((data) => {
                     return (

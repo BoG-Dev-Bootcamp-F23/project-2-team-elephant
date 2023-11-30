@@ -6,7 +6,7 @@ export default function AnimalHeader(props) {
         <div className={styles.container}>
             <p>Animals</p>
             <div className={styles.create}>
-                <img src="addicon.png" className={styles.icon} />
+                <img src="addicon.png" className={styles.icon} onClick={props.click} />
                 <p>Create new</p>
             </div>
         </div>

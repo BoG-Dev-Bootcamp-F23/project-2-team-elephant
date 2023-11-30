@@ -14,6 +14,8 @@ import TrainingLogDisplay from '@/components/TrainingLogDisplay';
 import UsersDisplay from '@/components/UsersDisplay';
 import EditTrainingLog from '@/components/EditTrainingLog';
 import CreateTrainingLog from '@/components/CreateTrainingLog';
+import CreateAnimalCard from '@/components/CreateAnimalCard';
+
 export default function Dashboard() {
 
     const { userID } = useAuth();
@@ -26,20 +28,34 @@ export default function Dashboard() {
 
     let visibleComponent;
 
+    const changeCreateAnimal = () => {
+      setVisible("create-animal");
+    }
+
+    const changeCreateTraining = () => {
+      setVisible("create-training");
+    }
+
+    const changeEditTraining = () => {
+      setVisible("edit-training");
+    }
+
     if (visible === "training-logs") {
-      visibleComponent = <UserTrainingLogs setVisible = {setVisible} setTrainingCardInfo = {setTrainingCardInfo}  />;
+      visibleComponent = <UserTrainingLogs setVisible = {setVisible} changeCreateTraining={changeCreateTraining} changeEditTraining={changeEditTraining} />;
     } else if (visible === "animals") {
-      visibleComponent = <UserAnimals />;
+      visibleComponent = <UserAnimals changeCreateAnimal = {changeCreateAnimal} />;
     } else if (visible === "admin-training") {
-      visibleComponent = <TrainingLogDisplay setVisible = {setVisible} setTrainingCardInfo = {setTrainingCardInfo} />
+      visibleComponent = <TrainingLogDisplay setVisible = {setVisible} changeCreateTraining={changeCreateTraining} changeEditTraining={changeEditTraining} />
     } else if (visible === "admin-animals") {
-      visibleComponent = <AnimalsDisplay />
+      visibleComponent = <AnimalsDisplay changeCreateAnimal = {changeCreateAnimal} />
     } else if (visible === "admin-users") {
       visibleComponent = <UsersDisplay />
     } else if (visible === "edit-training") {
       visibleComponent = <EditTrainingLog trainingCardID = {trainingCardID} user = {userID} />
     } else if (visible === "create-training") {
       visibleComponent = <CreateTrainingLog user = {userID} />
+    } else if (visible === "create-animal") {
+      visibleComponent = <CreateAnimalCard />
     }
 
     async function getTrainingData() {
