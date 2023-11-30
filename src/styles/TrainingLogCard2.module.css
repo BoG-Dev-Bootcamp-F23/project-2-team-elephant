@@ -9,6 +9,17 @@
     box-shadow: 4px 4px 4px 0px #00000040;
     border-radius: 10px;
     font-family: 'Heebo', sans-serif;
+    /* height: 120px;
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    margin: 20px;
+    align-items: center;
+    background-color: white;
+    box-shadow: 4px 4px 4px 0px #00000040;
+    border-radius: 10px;
+    font-family: 'Heebo', sans-serif; */
 }
 
 .left {
@@ -16,6 +27,7 @@
     flex-direction: column;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+    align-content: center;
     height: 100%;
     background-color: #070A52D9;
 }
@@ -115,6 +127,7 @@
     justify-content: center;
     align-items: center;
     background-color: #D21312;
+    border-style: none;
 }
 
 .buttonBox:hover {

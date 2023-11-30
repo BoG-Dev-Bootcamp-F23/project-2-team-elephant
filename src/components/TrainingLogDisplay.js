@@ -20,11 +20,11 @@ export default function TrainingLogDisplay(props) {
 
     return (
         <div className={styles.allLogsContainer}>
-            <TrainingLogHeader click = {changeCreateTraining} />
+            <TrainingLogHeader click = {props.changeCreateTraining} />
             <div className={styles.logContainer}>
-                {allLogs?.map((data) => {
+                {sortedAllLogs?.map((data) => {
                     return (
-                        <TrainingLogCard click = {changeEditTraining} all={true} setTrainingCardInfo = {props.setTrainingCardInfo} setVisible = {props.setVisible} id = {data._id} title={data.title} date={data.date} description={data.description} hours={data.hours} user={data.user} animal={data.animal}/>
+                        <TrainingLogCard click = {props.changeEditTraining} all={true} setTrainingCardInfo = {props.setTrainingCardInfo} setVisible = {props.setVisible} id = {data._id} title={data.title} date={data.date} description={data.description} hours={data.hours} user={data.user} animal={data.animal}/>
                     )
                 })}
             </div>

@@ -4,8 +4,6 @@
     font-weight: normal;
     font-style: normal;
 }
-
-
 .container {
     width: 100%;
     height: inherit;
@@ -15,139 +13,82 @@
     font-family: 'Heebo', sans-serif;
     font-weight: 300;
 }
-
 .title {
     color: gray;
     border-bottom: solid;
     border-width: 1px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     margin-top: 8px;
 }
-
-
 .mainBody {
     border-top: green;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    gap: 40;
     padding-inline: 10%;
+    height: 100%;
 }
-
 .titleInput {
     display: flex;
     flex-direction: column;
+    margin-bottom: 15px;
 }
-
+.titleInputBox {
+    border-radius: 6px;
+    border-width: 2px;
+    border-color: #C0BFBF ;
+}
 .animalSelect {
     display: flex;
     flex-direction: column;
 }
-
 .hoursTrainedInput {
     display: flex;
     flex-direction: column;
+    margin-top: 15px;
 }
-
 .dateInput {
     display: flex;
     flex-direction: row;
+    margin-top: 25px;
+    justify-content: space-between;
+    gap: 20px;
 }
-
 .monthBox {
     display: flex;
     flex-direction: column;
+    width: 25%;
 }
-
-.titleInputBox {
+.titleInputBox, .animalInputBox, .numberInputBox, .dateInputBox, .yearInput, .monthInput {
     padding-top: 10px;
     padding-bottom: 10px;
-    padding-left: 5px;
     background-color: white;
     border-radius: 6px;
     border-width: 2px;
     border-color: #C0BFBF ;
-    color: black;
+    color: #565252;
+    height: 50px;
+    padding-left: 10px;
+    font-family: 'Heebo', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border-style: solid;
 }
-
-.animalInputBox {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 5px;
-    background-color: white;
-    border-radius: 6px;
-    border-width: 2px;
-    border-color: #C0BFBF ;
-    color: black;
-
-}
-
-.numberInputBox {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 5px;
-    background-color: white;
-    border-radius: 6px;
-    border-width: 2px;
-    border-color: #C0BFBF ;
-    color: black;
-
-}
-
 .dateInput {
+    margin-top: 15px;
+    align-items: center;
     width: 100%;
 }
-
-.dateInputBox {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 5px;
-    background-color: white;
-    border-radius: 6px;
-    border-width: 2px;
-    width: 60%;
-    border-color: #C0BFBF ;
-    color: black;
-
-}
-
-.yearInput {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 5px;
-    background-color: white;
-    border-radius: 6px;
-    border-width: 2px;
-    border-color: #C0BFBF ;
-    color: black;
-
-    
-}
-
-.monthInput {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 5px;
-    background-color: white;
-    border-radius: 6px;
-    border-width: 2px;
-    width: 80%;
-    border-color: #C0BFBF ;
-    color: black;
-
-}
-
-
 .dateBox {
-    
     display: flex;
     flex-direction: column;
     color: black;
-
+    width: 20%;
 }
 .noteInput {
+    margin-top: 15px;
     width: 100%;
 }
-
 .titleInput h4,
 .animalSelect h4,
 .hoursTrainedInput h4,
@@ -155,29 +96,61 @@
 .noteInput h4 {
   color: black;
 }
-
 .notesInputBox {
-    padding-top: 10px;
-    padding-bottom: 60px;
-    padding-left: 5px;
+    align-items: start;
+    padding-left: 8px;
     width: 100%;
     background-color: white;
     border-radius: 6px;
     border-width: 2px;
     border-color: #C0BFBF ;
-    margin-bottom: 10px;
     color: black;
-
+    border-style: solid;
+    height: 150px;
+    padding-bottom: 100px;
+    font-family: 'Heebo', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    /* vertical-align: top; */
+    /* text-align: start; */
+    /* padding-top: 0; */
 }
 
+
+.cancelButton {
+    font-family: 'Heebo', 'sans-serif';
+    font-size: medium;
+    border-radius: 6px;
+    background-color: white;
+    color: #D21312;
+    width: 700px;
+    border-width: 1;
+    border-color: #D21312;
+    height: 40px;
+    border-style: solid;
+}
+.saveButton {
+    font-family: 'Heebo', 'sans-serif';
+    font-size: medium;
+    border-radius: 6px;
+    background-color: #D21312;
+    color: white;
+    width: 700px;
+    border-width: 1;
+    border-color: #D21312;
+    height: 40px;
+    border-style: solid;
+}
 .yearBox {
     display: flex;
     flex-direction: column;
+    width: 60%;
 }
-
 .buttonBar {
+    margin-top: 40px;
     display: flex;
-    width: 130px;
+    width: 25%;
+    gap: 20px;
     flex-direction: row;
     justify-content: space-around;
 }
