@@ -1,10 +1,11 @@
 import React from "react";
 import styles from '..//styles/CreateTrainingLog.module.css';
 import { useState, useEffect } from "react";
+import { useAuth } from "@/contexts/useAuth";
 
 export default function CreateTrainingLog(props) {
 
-    const { user } = props;
+    const { userID } = useAuth();
     const [title, setTitle] = useState("");
     const [animalVal, setAnimal] = useState("");
     const [date, setDate] = useState("")
@@ -20,7 +21,7 @@ export default function CreateTrainingLog(props) {
 
     useEffect(() => {
         async function getUserAnimals() {
-            const response = await fetch(`http://localhost:3000/api/useranimals?owner=${user}`);
+            const response = await fetch(`http://localhost:3000/api/useranimals?owner=${userID}`);
             const data = await response.json();
             setUserAnimals(data);
         }
@@ -40,7 +41,7 @@ export default function CreateTrainingLog(props) {
         setHours(event.target.value)
     }
         const URL = "http://localhost:3000/api/training"
-        async function handleClick(animalVal, title, month, day, year, description, hours) {
+        async function handleClick() {
         try {
             const response = await fetch(URL,
                 {
@@ -48,7 +49,7 @@ export default function CreateTrainingLog(props) {
                     headers: {
                         'Content-Type': 'application/json',
                     },  body: JSON.stringify({ // We should keep the fields consistent for managing this data later
-                        user: user,
+                        user: userID,
                         animal: animalVal,
                         title: title,
                         date: (new Date(year, month, day)).toISOString(),
@@ -56,6 +57,9 @@ export default function CreateTrainingLog(props) {
                         hours: hours
                     })
                 });
+                if (response.status === 200) {
+                    props.revert();
+                }
         } catch (e) {
             console.log(e);
         }
@@ -115,7 +119,7 @@ export default function CreateTrainingLog(props) {
                 <input className = {styles.notesInputBox} onChange={e => { setDescription(e.currentTarget.value);}} value={description} type="text" placeholder="Notes" />
             </div>
             <div className={styles.buttonBar}>
-                <button className={styles.cancelButton}>Cancel</button>
+                <button onClick={() => {props.revert()}} className={styles.cancelButton}>Cancel</button>
                 <button onClick = {() => {handleClick(animalVal, title, month, day, year, description, hours )}} type="submit" className={styles.saveButton}>Save</button>
             </div>
         </div>

@@ -12,10 +12,11 @@ export default async function createAnimal(data) {
         // await animal.save()
         // return true;
 
-        const { owner} = data;
-    
+        const { owner } = data;
+        console.log({owner: owner});
         const existOwner = await User.findOne({_id : owner});
         if (!existOwner) {
+            console.log("Owner doesn't exist");
             return null;
         }
 

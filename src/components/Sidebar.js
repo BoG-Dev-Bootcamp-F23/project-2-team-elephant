@@ -12,30 +12,28 @@ import { useState } from 'react';
 
 export default function Sidebar(props) {
     const { fullName, admin } = useAuth();
-    const [clicked, setClicked] = useState("training-logs");
-    console.log(clicked);
 
     return (
         <div className={styles.sideBarContainer}>
             <div>
                 <div className={styles.userContainer}>
-                    <button className={(clicked === "training-logs") ? styles.activePanel : styles.inactivePanel} onClick={() => {props.setVisible("training-logs"); setClicked("training-logs")}}>
+                    <button className={(props.clicked === "training-logs") ? styles.activePanel : styles.inactivePanel} onClick={() => {props.setVisible("training-logs"); props.setClicked("training-logs")}}>
                         <Image src={trainingIcon} width={30} height={30} className={styles.icon}></Image>
                         Training logs</button>
-                    <button className={(clicked === "animals") ? styles.activePanel : styles.inactivePanel} onClick={() => {props.setVisible("animals"); setClicked("animals");}}>
+                    <button className={(props.clicked === "animals") ? styles.activePanel : styles.inactivePanel} onClick={() => {props.setVisible("animals"); props.setClicked("animals");}}>
                         <Image src={animalIcon} width={30} height={30} className={styles.icon}></Image>
                         Animals</button>
                 </div>
 
                 {admin ? <div className={styles.adminContainer}>
                     <p className={styles.adminHeader}>Admin Access</p>
-                    <button className={(clicked === "admin-training") ? styles.activePanel : styles.inactivePanel} onClick={() => {props.setVisible("admin-training"); setClicked("admin-training")}}>
+                    <button className={(props.clicked === "admin-training") ? styles.activePanel : styles.inactivePanel} onClick={() => {props.setVisible("admin-training"); props.setClicked("admin-training")}}>
                         <Image src={adminTraining} width={30} height={30} className={styles.icon}></Image>
                         All Training</button>
-                    <button className={(clicked === "admin-animals") ? styles.activePanel : styles.inactivePanel} onClick={() => {props.setVisible("admin-animals"); setClicked("admin-animals")}}>
+                    <button className={(props.clicked === "admin-animals") ? styles.activePanel : styles.inactivePanel} onClick={() => {props.setVisible("admin-animals"); props.setClicked("admin-animals")}}>
                         <Image src={adminAnimals} width={30} height={30} className={styles.icon}></Image>
                         All Animals</button>
-                    <button className={(clicked === "admin-users") ? styles.activePanel : styles.inactivePanel} onClick={() => {props.setVisible("admin-users"); setClicked("admin-users")}}>
+                    <button className={(props.clicked === "admin-users") ? styles.activePanel : styles.inactivePanel} onClick={() => {props.setVisible("admin-users"); props.setClicked("admin-users")}}>
                         <Image src={adminUsers} width={30} height={30} className={styles.icon}></Image>
                         All Users</button>
                 </div> : <div className={styles.noAdmin}></div>}

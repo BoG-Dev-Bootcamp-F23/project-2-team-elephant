@@ -1,8 +1,9 @@
 import React from "react";
 import styles from '..//styles/CreateAnimalCard.module.css';
 import { useState } from "react";
+import { useAuth } from "@/contexts/useAuth";
 export default function CreateAnimalCard(props) {
-    const {user} = props;
+    const { userID } = useAuth();
     const [name, setName] = useState("");
     const [breed, setBreed] = useState("")
     const [hoursTrained, setHoursTrained] = useState(0);
@@ -15,8 +16,8 @@ export default function CreateAnimalCard(props) {
     const hoursTrainedUpdate=(event)=>{
         setHoursTrained(event.target.value)
     }
-        const URL = "http://localhost:3000/api/animal"
-        async function handleClick(name, breed, hoursTrained) {
+    const URL = "http://localhost:3000/api/animal"
+    async function handleClick(name, breed, hoursTrained) {
         try {
             const response = await fetch(URL,
                 {
@@ -26,12 +27,16 @@ export default function CreateAnimalCard(props) {
                     },  body: JSON.stringify({ // We should keep the fields consistent for managing this data later
                         name: name,
                         breed: breed,
-                        owner: user,
+                        owner: userID,
                         hoursTrained: hoursTrained,
                         //profilePicture: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.goodhousekeeping.com%2Flife%2Fpets%2Fg4531%2Fcutest-dog-breeds%2F&psig=AOvVaw1gdRD90n2LbkuPQguGQLB8&ust=1701414867891000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIigl7iW64IDFQAAAAAdAAAAABAE"
                         profilePicture: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freeiconspng.com%2Fimages%2Fanimal-icon-png&psig=AOvVaw0ETPrWG77nJCq-vCJ5r11C&ust=1701435751405000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJC4nZ7k64IDFQAAAAAdAAAAABAE"
                     })
                 });
+                console.log(response.status);
+            if (response.status === 200) {
+                props.revert();
+            }
         } catch (e) {
             console.log(e);
         }
@@ -71,7 +76,7 @@ export default function CreateAnimalCard(props) {
                     <input className = {styles.notesInputBox} type="text" placeholder="Notes" />
                 </div>
                 <div className={styles.buttonBar}>
-                    <button className={styles.cancelButton}>Cancel</button>
+                    <button onClick={() => {props.revert()}} className={styles.cancelButton}>Cancel</button>
                     <button onClick = {() => {handleClick(name, breed, hoursTrained)}} type="submit" className={styles.saveButton}>Save</button>
                 </div>
             </div>

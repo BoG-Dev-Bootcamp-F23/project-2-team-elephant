@@ -25,6 +25,7 @@ export default function Dashboard() {
     const [trainingCard, setTrainingCard] = useState([]);
     const [visible, setVisible] = useState("training-logs");
     const [trainingCardID, setTrainingCardInfo] = useState("");
+    const [clicked, setClicked] = useState("training-logs");
 
     let visibleComponent;
 
@@ -40,22 +41,27 @@ export default function Dashboard() {
       setVisible("edit-training");
     }
 
+    const revert = () => {
+      setVisible("training-logs");
+      setClicked("training-logs");
+    }
+
     if (visible === "training-logs") {
-      visibleComponent = <UserTrainingLogs setVisible = {setVisible} changeCreateTraining={changeCreateTraining} changeEditTraining={changeEditTraining} />;
+      visibleComponent = <UserTrainingLogs changeCreateTraining={changeCreateTraining} changeEditTraining={changeEditTraining} />;
     } else if (visible === "animals") {
       visibleComponent = <UserAnimals changeCreateAnimal = {changeCreateAnimal} />;
     } else if (visible === "admin-training") {
-      visibleComponent = <TrainingLogDisplay setVisible = {setVisible} changeCreateTraining={changeCreateTraining} changeEditTraining={changeEditTraining} />
+      visibleComponent = <TrainingLogDisplay changeCreateTraining={changeCreateTraining} changeEditTraining={changeEditTraining} />
     } else if (visible === "admin-animals") {
-      visibleComponent = <AnimalsDisplay changeCreateAnimal = {changeCreateAnimal} />
+      visibleComponent = <AnimalsDisplay  changeCreateAnimal = {changeCreateAnimal} />
     } else if (visible === "admin-users") {
       visibleComponent = <UsersDisplay />
     } else if (visible === "edit-training") {
-      visibleComponent = <EditTrainingLog trainingCardID = {trainingCardID} user = {userID} />
+      visibleComponent = <EditTrainingLog revert={revert} setTrainingCardInfo={setTrainingCardInfo} trainingCardID = {trainingCardID} user = {userID} />
     } else if (visible === "create-training") {
-      visibleComponent = <CreateTrainingLog user = {userID} />
+      visibleComponent = <CreateTrainingLog revert={revert} user = {userID} />
     } else if (visible === "create-animal") {
-      visibleComponent = <CreateAnimalCard />
+      visibleComponent = <CreateAnimalCard revert={revert} />
     }
 
     async function getTrainingData() {
@@ -96,7 +102,7 @@ export default function Dashboard() {
             <Header className = {styles.headerContainer}/>
           {/* </div> */}
           <div className={styles.mainContent}>
-            <Sidebar visible={visible} setVisible={setVisible} setInfo={setTraining} className = {styles.sideBarContainer} />
+            <Sidebar clicked={clicked} setClicked={setClicked} visible={visible} setVisible={setVisible} setInfo={setTraining} className = {styles.sideBarContainer} />
             {visibleComponent}
           </div>
         </div>

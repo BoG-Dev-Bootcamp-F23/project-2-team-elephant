@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 
 export default function EditTrainingLog(props) {
 
-    const { user } = props;
+    const { userID } = useAuth();
     var newTitle;
     var newHours;
     var newDescription;
@@ -19,7 +19,6 @@ export default function EditTrainingLog(props) {
     const [ animalVal, setAnimal ] = useState("");
     const [ userAnimals, setUserAnimals ] = useState([]);
     const [ logs, setLogs] = useState([]);
-    console.log(props.trainingCardID);
 
 
     useEffect(() => {
@@ -42,6 +41,8 @@ export default function EditTrainingLog(props) {
 
     for (let i = 0; i < logs?.length; i++) {
         if (logs[i]._id === props.trainingCardID) {
+            console.log(logs[i]._id);
+            props.setTrainingCardInfo(logs[i]._id);
             newTitle = logs[i].title;
             newDescription = logs[i].description;
             newHours = logs[i].hours;
@@ -55,7 +56,7 @@ export default function EditTrainingLog(props) {
     
     useEffect(() => {
         async function getUserAnimals() {
-            const response = await fetch(`http://localhost:3000/api/useranimals?owner=${user}`);
+            const response = await fetch(`http://localhost:3000/api/useranimals?owner=${userID}`);
             const data = await response.json();
             setUserAnimals(data);
         }
@@ -71,7 +72,7 @@ export default function EditTrainingLog(props) {
 
 
     const URL = "http://localhost:3000/api/training"
-    async function handleClick(title, description, hoursTrained) {
+    async function handleClick() {
     try {
         const response = await fetch(URL,
             {
@@ -82,10 +83,12 @@ export default function EditTrainingLog(props) {
                     id: props.trainingCardID,
                     title: title,
                     description: description,
-                    hours: hoursTrained
+                    hours: newHours
                 })
             });
-            console.log(response);
+            if (response.status === 200) {
+                props.revert();
+            }
     } catch (e) {
         console.log(e);
     }
@@ -112,7 +115,7 @@ export default function EditTrainingLog(props) {
                 </div>
                 <div className={styles.hoursTrainedInput}>
                     <h4>Total Hours Trained</h4>
-                    <input  className={styles.numberInputBox} type="number" placeholder= {newHours}  value = {newHours} onChange={e => {setHoursTrained(e.currentTarget.value);}}/>
+                    <input className={styles.numberInputBox} type="number" placeholder= {newHours}  value = {newHours} onChange={e => {setHoursTrained(e.currentTarget.value)}}/>
                 </div>
                 <div className={styles.dateInput}>
                 <div className={styles.monthBox}>
@@ -134,8 +137,8 @@ export default function EditTrainingLog(props) {
                     <input className = {styles.notesInputBox} type="text" placeholder={newDescription} value = {description} onChange={e => {setDescription(e.currentTarget.value);}}  />
                 </div>
                 <div className={styles.buttonBar}>
-                    <button className={styles.cancelButton}>Cancel</button>
-                    <button onClick = {() => {handleClick(title, description, hoursTrained)}} className={styles.saveButton}> Save </button>
+                    <button onClick = {() => {props.revert()}} className={styles.cancelButton}>Cancel</button>
+                    <button onClick = {() => {handleClick()}} className={styles.saveButton}> Save </button>
                 </div>
             </div>
         </div>
