@@ -11,7 +11,7 @@ import AnimalCard from '@/components/AnimalCard';
 import TrainingLogCard from '@/components/TrainingLogCard';
 import UserAnimals from '@/components/UserAnimals';
 import UserTrainingLogs from '@/components/UserTrainingLogs';
-import Dashboard from './Dashboard';
+import Dashboard from './dashboard';
 import { useAuth } from '@/contexts/useAuth';
 
 export default function side() {

@@ -20,7 +20,7 @@
     margin-right: 10px;
 }
 .inactivePanel:hover {
-    background-color: hsl(0, 65%, 80%); ;
+    background-color: hsl(0, 65%, 80%);
 }
 
 
@@ -33,6 +33,20 @@
     color: #565252;
     width: 100%;
     background-color: white;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    align-items: center;
+    font-family: 'Heebo', sans-serif;
+}
+
+.activePanel {
+    display: flex;
+    border-width: 0;
+    flex-direction: row;
+    padding: 10px;
+    color: #565252;
+    width: 100%;
+    background-color: hsl(0, 65%, 80%);
     border-radius: 10px;
     margin-bottom: 5px;
     align-items: center;
