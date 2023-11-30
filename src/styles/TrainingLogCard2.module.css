@@ -1,6 +1,6 @@
 .mainCard {
-    height: 120px;
-    width: 800px;
+    height: 20vh;
+    width: 62vw;
     display: flex;
     flex-direction: row;
     margin: 20px;
@@ -109,13 +109,12 @@
 
 .buttonBox {
     display: flex;
+    border-radius: 100%;
+    width: 3.5vw;
+    height: 3.5vw;
     justify-content: center;
     align-items: center;
-    border-radius: 100%;
-    width: 50px;
-    height: 50px;
     background-color: #D21312;
-    border: 1px solid grey;
 }
 
 .buttonBox:hover {
