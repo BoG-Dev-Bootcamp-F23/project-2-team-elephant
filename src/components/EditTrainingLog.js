@@ -1,9 +1,9 @@
 import React from "react";
-import styles from '..//styles/EditTrainingLog.module.css';
+import styles from '..//styles/CreateTrainingLog.module.css';
 
 
 
-export default function EditTrainingLog() {
+export default function CreateTrainingLog() {
 
 
 

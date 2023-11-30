@@ -3,10 +3,8 @@ import Login from './Login';
 import AnimalCard from '@/components/AnimalCard';
 import TrainingLogCard from '@/components/TrainingLogCard';
 import Dashboard from './Dashboard';
-import AllAnimals from '@/components/AllAnimals';
-import UserTrainingLogs from '@/components/UserTrainingLogs';
-import EditAnimalCard from '@/components/EditAnimalCard';
+import CreateAnimalCard from '@/components/CreateAnimalCard';
 
 export default function Home() {
-  return (<EditAnimalCard/>);
+  return (<Login/>);
 }

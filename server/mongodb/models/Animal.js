@@ -20,7 +20,6 @@ const animalSchema = new mongoose.Schema({
     },
     profilePicture: {
         type: String,
-        required: true
     }
 })
 

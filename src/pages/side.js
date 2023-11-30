@@ -7,11 +7,16 @@ import UsersDisplay from '@/components/UsersDisplay';
 import TrainingLogDisplay from '@/components/TrainingLogDisplay';
 import AnimalsDisplay from '@/components/AnimalsDisplay';
 import Link from 'next/link';
+<<<<<<< Updated upstream
 import AnimalCard from '@/components/AnimalCard';
 import TrainingLogCard from '@/components/TrainingLogCard';
 import UserAnimals from '@/components/UserAnimals';
 import UserTrainingLogs from '@/components/UserTrainingLogs';
 import { useAuth } from '@/contexts/useAuth';
+=======
+import CreateAnimalCard from '@/components/CreateAnimalCard';
+
+>>>>>>> Stashed changes
 
 export default function side() {
     const { admin, fullName } = useAuth();
@@ -22,6 +27,7 @@ export default function side() {
             <UserCard></UserCard>
             <UserCard></UserCard> */}
             {/* <Header></Header> */}
+<<<<<<< Updated upstream
             {/* <AnimalCard></AnimalCard> */}
             {/* <TrainingLogCard></TrainingLogCard> */}
             {/* <UserCard admin = {admin} fullName = {fullName}></UserCard> */}
@@ -30,6 +36,10 @@ export default function side() {
             {/* <AnimalsDisplay></AnimalsDisplay> */}
             {/* <UserAnimals></UserAnimals> */}
             <UserTrainingLogs></UserTrainingLogs>
+=======
+            <CreateAnimalCard/>
+            
+>>>>>>> Stashed changes
         </div>
     );
 }

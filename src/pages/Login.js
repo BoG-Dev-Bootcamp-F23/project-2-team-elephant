@@ -33,7 +33,10 @@ export default function Login() {
                 setUserID(data.id);
                 setAdmin(data.admin);
                 setFullName(data.fullName);
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
                 router.push("/side");
             }
         } catch (e) {

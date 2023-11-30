@@ -66,6 +66,7 @@
     border-radius: 6px;
     border-width: 2px;
     border-color: #C0BFBF ;
+    color: black;
 }
 
 
@@ -77,6 +78,8 @@
     border-radius: 6px;
     border-width: 2px;
     border-color: #C0BFBF ;
+    color: black;
+
 }
 
 
@@ -98,6 +101,8 @@
     border-radius: 6px;
     border-width: 2px;
     border-color: #C0BFBF ;
+    color: black;
+
 }
 
 .dateInput {
@@ -113,6 +118,8 @@
     border-width: 2px;
     width: 60%;
     border-color: #C0BFBF ;
+    color: black;
+
 }
 
 .yearInput {
@@ -123,6 +130,8 @@
     border-radius: 6px;
     border-width: 2px;
     border-color: #C0BFBF ;
+    color: black;
+
     
 }
 
@@ -135,6 +144,8 @@
     border-width: 2px;
     width: 80%;
     border-color: #C0BFBF ;
+    color: black;
+
 }
 
 
@@ -156,6 +167,7 @@
 }
 
 .notesInputBox {
+    color: black;
     padding-top: 10px;
     padding-bottom: 60px;
     padding-left: 5px;
