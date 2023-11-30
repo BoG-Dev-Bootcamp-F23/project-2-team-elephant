@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 export default function CreateTrainingLog(props) {
 
-    const {user} = props;
+    const { user } = props;
     const [title, setTitle] = useState("");
     const [animalVal, setAnimal] = useState("");
     const [date, setDate] = useState("")

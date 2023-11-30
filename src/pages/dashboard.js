@@ -12,26 +12,34 @@ import User from '../../server/mongodb/models/User';
 import AnimalsDisplay from '@/components/AnimalsDisplay';
 import TrainingLogDisplay from '@/components/TrainingLogDisplay';
 import UsersDisplay from '@/components/UsersDisplay';
-
+import EditTrainingLog from '@/components/EditTrainingLog';
+import CreateTrainingLog from '@/components/CreateTrainingLog';
 export default function Dashboard() {
+
+    const { userID } = useAuth();
   
     const [training, setTraining] = useState(false);
     const [animalCards, setAnimalCards] = useState([]);
-    const [trainingCards, setTrainingCards] = useState([]);
-    const [visible, setVisible] = useState("training-logs");
+    const [trainingCard, setTrainingCard] = useState([]);
+    const [visible, setVisible] = useState("admin-training");
+    const [trainingCardID, setTrainingCardInfo] = useState("");
 
     let visibleComponent;
 
     if (visible === "training-logs") {
-      visibleComponent = <UserTrainingLogs />;
+      visibleComponent = <UserTrainingLogs setVisible = {setVisible} setTrainingCardInfo = {setTrainingCardInfo}  />;
     } else if (visible === "animals") {
       visibleComponent = <UserAnimals />;
     } else if (visible === "admin-training") {
-      visibleComponent = <TrainingLogDisplay />
+      visibleComponent = <TrainingLogDisplay setVisible = {setVisible} setTrainingCardInfo = {setTrainingCardInfo} />
     } else if (visible === "admin-animals") {
       visibleComponent = <AnimalsDisplay />
     } else if (visible === "admin-users") {
       visibleComponent = <UsersDisplay />
+    } else if (visible === "edit-training") {
+      visibleComponent = <EditTrainingLog trainingCardID = {trainingCardID} user = {userID} />
+    } else if (visible === "create-training") {
+      visibleComponent = <CreateTrainingLog user = {userID} />
     }
 
     async function getTrainingData() {

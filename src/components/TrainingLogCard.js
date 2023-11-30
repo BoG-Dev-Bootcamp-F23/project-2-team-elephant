@@ -13,7 +13,7 @@ import { useAuth } from "@/contexts/useAuth";
 
 
 export default function TrainingLogCard(props) {
-    const {all, title, date, description, hours, user, animal} = props;
+    const {all, title, date, description, hours, user, animal, setVisible} = props;
 
     const { fullName } = useAuth();
 
@@ -23,6 +23,9 @@ export default function TrainingLogCard(props) {
     const yearr = props.date.substring(0, 4);
 
     const monthYear = monthh + " - " + yearr;
+
+
+
     const [ allUsers, setAllUsers ] = useState([]);
 
     useEffect(() => {
@@ -94,9 +97,15 @@ export default function TrainingLogCard(props) {
                         </div>
                     </div>
                 </div>
-                <button onClick={() => {}} className={styles.buttonBox}>
-                    <Image src={trainingIcon} width={25} height={25} className={styles.icon}></Image>
-                </button>
+
+        
+
+            </div>
+
+            <div className={styles.farRight}>
+                    <button onClick={() => {setVisible("edit-training"); props.setTrainingCardInfo(props.id)}} className={styles.editButton}>
+                        <Image src={trainingIcon} width={30} height={30} className={styles.icon}></Image>
+                    </button>
             </div>
         </div>
     )
