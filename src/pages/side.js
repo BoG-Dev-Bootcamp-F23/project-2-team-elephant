@@ -11,6 +11,7 @@ import AnimalCard from '@/components/AnimalCard';
 import TrainingLogCard from '@/components/TrainingLogCard';
 import UserAnimals from '@/components/UserAnimals';
 import UserTrainingLogs from '@/components/UserTrainingLogs';
+import Dashboard from './Dashboard';
 import { useAuth } from '@/contexts/useAuth';
 
 export default function side() {
@@ -29,7 +30,8 @@ export default function side() {
             {/* <TrainingLogDisplay></TrainingLogDisplay> */}
             {/* <AnimalsDisplay></AnimalsDisplay> */}
             {/* <UserAnimals></UserAnimals> */}
-            <UserTrainingLogs></UserTrainingLogs>
+            {/* <UserTrainingLogs></UserTrainingLogs> */}
+            <Dashboard></Dashboard>
         </div>
     );
 }
