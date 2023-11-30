@@ -1,0 +1,180 @@
+@font-face {
+    font-family: 'Heebo';
+    src: url('/src/fonts/Heebo-Regular.ttf') format('ttf'); /* adjust the filename accordingly */
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.container {
+    width: 100%;
+    height: inherit;
+    background-color: white;
+    padding-left: 30px;
+    padding-right: 50px;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 300;
+}
+
+.title {
+    color: gray;
+    border-bottom: solid;
+    border-width: 1px;
+    margin-bottom: 10px;
+    margin-top: 8px;
+}
+
+
+.mainBody {
+    border-top: green;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-inline: 10%;
+}
+
+.animalNameInut {
+    display: flex;
+    flex-direction: column;
+}
+
+.breedSelect {
+    display: flex;
+    flex-direction: column;
+}
+
+.hoursTrainedInput {
+    display: flex;
+    flex-direction: column;
+}
+
+.dateInput {
+    display: flex;
+    flex-direction: row;
+}
+
+.monthBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.animalNameInputBox {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    background-color: white;
+    border-radius: 6px;
+    border-width: 2px;
+    border-color: #C0BFBF ;
+}
+
+
+.breedSelectBox {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    background-color: white;
+    border-radius: 6px;
+    border-width: 2px;
+    border-color: #C0BFBF ;
+}
+
+
+.animalInputBox {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    background-color: white;
+    border-radius: 6px;
+    border-width: 2px;
+    border-color: #C0BFBF ;
+}
+
+.numberInputBox {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    background-color: white;
+    border-radius: 6px;
+    border-width: 2px;
+    border-color: #C0BFBF ;
+}
+
+.dateInput {
+    width: 100%;
+}
+
+.dateInputBox {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    background-color: white;
+    border-radius: 6px;
+    border-width: 2px;
+    width: 60%;
+    border-color: #C0BFBF ;
+}
+
+.yearInput {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    background-color: white;
+    border-radius: 6px;
+    border-width: 2px;
+    border-color: #C0BFBF ;
+    
+}
+
+.monthInput {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    background-color: white;
+    border-radius: 6px;
+    border-width: 2px;
+    width: 80%;
+    border-color: #C0BFBF ;
+}
+
+
+.dateBox {
+    
+    display: flex;
+    flex-direction: column;
+}
+.noteInput {
+    width: 100%;
+}
+
+.titleInput h4,
+.animalSelect h4,
+.hoursTrainedInput h4,
+.dateInput h4,
+.noteInput h4 {
+  color: black;
+}
+
+.notesInputBox {
+    padding-top: 10px;
+    padding-bottom: 60px;
+    padding-left: 5px;
+    width: 100%;
+    background-color: white;
+    border-radius: 6px;
+    border-width: 2px;
+    border-color: #C0BFBF ;
+    margin-bottom: 10px;
+}
+
+.yearBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonBar {
+    display: flex;
+    width: 130px;
+    flex-direction: row;
+    justify-content: space-around;
+}
