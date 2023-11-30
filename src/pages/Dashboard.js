@@ -7,9 +7,9 @@ import Sidebar from '@/components/Sidebar';
 import Header from '@/components/Header';
 import { useAuth } from '@/contexts/useAuth';
 
-export default function Home() {
+export default function Dashboard() {
 
-    const [training, setTraining] = useState(true);
+    const [training, setTraining] = useState(false);
     const [animalCards, setAnimalCards] = useState([]);
     const [trainingCard, setTrainingCard] = useState([]);
 
@@ -50,9 +50,12 @@ export default function Home() {
 
     return (
         <>
-          <Header />
+        <div className={styles.everything}>
+          {/* <div className={styles.headerContainer}> */}
+            <Header className = {styles.headerContainer}/>
+          {/* </div> */}
           <div className={styles.mainContent}>
-            <Sidebar />
+            <Sidebar  setInfo={setTraining} className = {styles.sideBarContainer} />
             <div className={styles.contentContainer}>
               {training ? (
                 <div className={styles.trainingCards}>
@@ -69,6 +72,7 @@ export default function Home() {
               )}
             </div>
           </div>
+        </div>
         </>
       );
 }      
