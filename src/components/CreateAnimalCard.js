@@ -28,7 +28,8 @@ export default function CreateAnimalCard(props) {
                         breed: breed,
                         owner: user,
                         hoursTrained: hoursTrained,
-                        profilePicture: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.goodhousekeeping.com%2Flife%2Fpets%2Fg4531%2Fcutest-dog-breeds%2F&psig=AOvVaw1gdRD90n2LbkuPQguGQLB8&ust=1701414867891000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIigl7iW64IDFQAAAAAdAAAAABAE"
+                        //profilePicture: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.goodhousekeeping.com%2Flife%2Fpets%2Fg4531%2Fcutest-dog-breeds%2F&psig=AOvVaw1gdRD90n2LbkuPQguGQLB8&ust=1701414867891000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIigl7iW64IDFQAAAAAdAAAAABAE"
+                        profilePicture: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freeiconspng.com%2Fimages%2Fanimal-icon-png&psig=AOvVaw0ETPrWG77nJCq-vCJ5r11C&ust=1701435751405000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJC4nZ7k64IDFQAAAAAdAAAAABAE"
                     })
                 });
         } catch (e) {

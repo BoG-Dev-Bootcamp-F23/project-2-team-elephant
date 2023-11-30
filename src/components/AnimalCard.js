@@ -5,8 +5,8 @@ import connectDB from "../../server/mongodb";
 import User from "../../server/mongodb/models/User";
 import { Connection } from 'mongoose';
 import getOneUser from '../../server/mongodb/actions/getOneUser';
+import Image from 'next/image';
 import { useAuth } from '@/contexts/useAuth';
-
 
 
 export default function AnimalCard(props) {
@@ -16,10 +16,9 @@ export default function AnimalCard(props) {
     const [realUser, setUser] = useState("");
 
 
-
     return (
         <div className= {styles.animalCard}>
-            <img src= {profilePicture} className={styles.animalCardPhoto} alt="dog" />
+            <img src= {profilePicture} className={styles.animalCardPhoto} alt="" />
             <div className = {styles.animalCardInfo}>
                 <div className={styles.circle}>
                 <div className = {styles.logo}> {realUser.substring(0, 1)} </div>
