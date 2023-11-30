@@ -102,6 +102,7 @@ export default function EditTrainingLog(props) {
                     <input className={styles.titleInputBox} type="text" placeholder={newTitle} value = {title} onChange={e => {setTitle(e.currentTarget.value);}} />
                 </div>
                 <div className={styles.animalSelect}>
+                <h4>Select Animal</h4>
                 <select placeholder = "Select Animal" className={styles.animalInputBox} onChange={e => { setAnimal(e.currentTarget.value);}} value={animalVal}>
                     {userAnimals?.map((data) => {
                         return (
@@ -131,7 +132,7 @@ export default function EditTrainingLog(props) {
                 </div>
             </div>
                 <div className={styles.noteInput}>
-                    <h4>Notes</h4>
+                    <h4>Note</h4>
                     <input className = {styles.notesInputBox} type="text" placeholder={newDescription} value = {description} onChange={e => {setDescription(e.currentTarget.value);}}  />
                 </div>
                 <div className={styles.buttonBar}>
