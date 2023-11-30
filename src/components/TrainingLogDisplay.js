@@ -15,12 +15,14 @@ export default function TrainingLogDisplay() {
         getLogs();
     }, [])
 
+    const sortedAllLogs = [...allLogs].sort((a, b) => a.date.localeCompare(b.date));
+
     return (
         <div className={styles.allLogsContainer}>
             <div className={styles.logContainer}>
                 {allLogs?.map((data) => {
                     return (
-                        <TrainingLogCard title={data.title} date={data.date} description={data.description} hours={data.hours} user={data.user} animal={data.animal}/>
+                        <TrainingLogCard all={true} title={data.title} date={data.date} description={data.description} hours={data.hours} user={data.user} animal={data.animal}/>
                     )
                 })}
             </div>

@@ -17,10 +17,12 @@ export default function UserTrainingLogs() {
         getUserTraining();
     }, [])
 
+    const sortedUserTraining = [...userTraining].sort((a, b) => a.date.localeCompare(b.date));
+
     return (
         <div className={styles.allLogsContainer}>
             <div className={styles.logContainer}>
-                {userTraining?.map((data) => {
+                {sortedUserTraining?.map((data) => {
                     return data.user === userID ? (
                         <TrainingLogCard key={data._id} title={data.title} date={data.date} description={data.description} hours={data.hours} user={data.user} animal={data.animal}/>
                     ) : null;
