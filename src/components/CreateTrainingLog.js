@@ -1,5 +1,5 @@
 import React from "react";
-import styles from '..//styles/CreateAnimalCard.module.css';
+import styles from '..//styles/CreateTrainingLog.module.css';
 import { useState, useEffect } from "react";
 
 export default function CreateTrainingLog(props) {

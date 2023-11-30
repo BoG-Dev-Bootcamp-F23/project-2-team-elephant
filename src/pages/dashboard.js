@@ -23,7 +23,7 @@ export default function Dashboard() {
     const [training, setTraining] = useState(false);
     const [animalCards, setAnimalCards] = useState([]);
     const [trainingCard, setTrainingCard] = useState([]);
-    const [visible, setVisible] = useState("admin-training");
+    const [visible, setVisible] = useState("training-logs");
     const [trainingCardID, setTrainingCardInfo] = useState("");
 
     let visibleComponent;

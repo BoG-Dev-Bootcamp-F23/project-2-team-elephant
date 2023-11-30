@@ -1,6 +1,7 @@
 import React from "react";
 import styles from '..//styles/TrainingLogCard2.module.css'
 import trainingIcon from '@/images/trainingIcon.png'
+import editIcon from '@/images/editIcon.png'
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Mongoose, mongo } from "mongoose";
@@ -23,8 +24,6 @@ export default function TrainingLogCard(props) {
     const yearr = props.date.substring(0, 4);
 
     const monthYear = monthh + " - " + yearr;
-
-
 
     const [ allUsers, setAllUsers ] = useState([]);
 
@@ -98,7 +97,7 @@ export default function TrainingLogCard(props) {
                     </div>
                 </div>
                 <button onClick={props.click} className={styles.buttonBox}>
-                    <Image src={trainingIcon} width={25} height={25} className={styles.icon}></Image>
+                    <Image src={editIcon} width={25} height={25} className={styles.icon}></Image>
                 </button>
             </div>
         </div>
