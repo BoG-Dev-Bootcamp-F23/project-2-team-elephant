@@ -18,113 +18,11 @@ export default function TrainingLogCard(props) {
     const { fullName } = useAuth();
 
     const dayy = props.date.substring(8, 10);
-    var monthh = props.date.substring(5, 7);
-    if (monthh === "00") {
-        monthh = "JAN";
-    }  else if (monthh === "01") {
-        monthh = "FEB";
-    } else if (monthh === "02") {
-        monthh = "MAR";
-    } else if (monthh === "03") {
-        monthh = "APR";
-    } else if (monthh === "04") {
-        monthh = "MAY";
-    }else if (monthh === "05") {
-        monthh = "JUNE";
-    } else if (monthh === "06") {
-        monthh = "JULY";
-    } else if (monthh === "07") {
-        monthh = "AUG";
-    } else if (monthh === "08") {
-        monthh = "SEPT";
-    } else if (monthh === "09") {
-        monthh = "OCT";
-    } else if (monthh === "10") {
-        monthh = "NOV";
-    } else {
-        monthh = "DEC";
-    }
-
+    let currentDate = new Date(props.date);
+    var monthh = currentDate.toDateString().substring(4, 7).toUpperCase();
     const yearr = props.date.substring(0, 4);
 
     const monthYear = monthh + " - " + yearr;
-
-    var year;
-    var month;
-    var day;
-
-    // async function getUser() {
-    //     await connectDB();
-    //     const userData = await User?.findById(user);
-    //     console.log(userData);
-    //     const name = userData.fullName;
-    //     console.log(name);
-    //     setUser(name);
-    //     console.log(realUser);
-    // }
-
-    // useEffect(() => {
-    //     getUser();
-    // },[]);
-
-
-    // function formatDateString(originalDate) {
-    //     const dateObject = new Date(originalDate);
-        
-    //     const monthNames = [
-    //       "January", "February", "March", "April", "May", "June",
-    //       "July", "August", "September", "October", "November", "December"
-    //     ];
-      
-    //     year = dateObject.getUTCFullYear();
-    //     month = monthNames[dateObject.getUTCMonth()];
-    //     day = dateObject.getUTCDate();
-      
-    //     return `${month} ${day}, ${year}`;
-    // }
-      
-    // const formattedDate = formatDateString(date);
-      
-
-
-
-    // return (
-    //     <div className = {styles.mainCard}>
-    //         <div className= {styles.date}>
-    //             <h1> {day} </h1>
-    //             <p> {month + " " + year}</p>
-    //         </div>
-    //         <div className={styles.cardContent}>
-    //             <div className = {styles.trainingInfo}>
-    //                 <div className = {styles.cardTitle}>
-    //                     <h1> {title} </h1>
-    //                     <p className={styles.hours}> • {hours} hours </p>
-    //                 </div>
-    //                 <div className = {styles.dogInfo}>
-    //                     {fullName} • {animal} • Lucy
-    //                 </div>
-    //                 <div className = {styles.trainingDescription}>
-    //                     {description}
-    //                 </div>
-    //             </div>
-    //             <div className = {styles.editButton}>
-    //                 <p className= {styles.letter}> Edit</p>
-    //             </div>
-    //         </div>
-    //     </div>
-    // );
-
-    //get all training logs
-
-    // const [oneAnimal, setOneAnimal] = useState("");
-    // useEffect(() => {
-    //     async function getOneAnimal() {
-    //         const response = await fetch(`http://localhost:3000/api/oneanimal?animalId=${animal}`);
-    //         const data = await response.json();
-    //         setOneAnimal(data);
-    //     }
-    //     getOneAnimal();
-    // }, [])
     const [ allUsers, setAllUsers ] = useState([]);
 
     useEffect(() => {
