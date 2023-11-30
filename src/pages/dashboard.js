@@ -13,8 +13,10 @@ import AnimalsDisplay from '@/components/AnimalsDisplay';
 import TrainingLogDisplay from '@/components/TrainingLogDisplay';
 import UsersDisplay from '@/components/UsersDisplay';
 import EditTrainingLog from '@/components/EditTrainingLog';
-
+import CreateTrainingLog from '@/components/CreateTrainingLog';
 export default function Dashboard() {
+
+    const { userID } = useAuth();
   
     const [training, setTraining] = useState(false);
     const [animalCards, setAnimalCards] = useState([]);
@@ -35,7 +37,9 @@ export default function Dashboard() {
     } else if (visible === "admin-users") {
       visibleComponent = <UsersDisplay />
     } else if (visible === "edit-training") {
-      visibleComponent = <EditTrainingLog trainingCardID = {trainingCardID} />
+      visibleComponent = <EditTrainingLog trainingCardID = {trainingCardID} user = {userID} />
+    } else if (visible === "create-training") {
+      visibleComponent = <CreateTrainingLog user = {userID} />
     }
 
     async function getTrainingData() {

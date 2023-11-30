@@ -4,5 +4,5 @@ import TrainingLogDisplay from '@/components/TrainingLogDisplay';
 import Dashboard from './dashboard';
 
 export default function Home() {
-  return (<Dashboard/>);
+  return (<Login/>);
 }

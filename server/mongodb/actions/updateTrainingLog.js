@@ -13,9 +13,7 @@ export default async function updateTrainingLog(data) {
             description: data.description, 
             hours: data.hours
         });
-        if (!newTrainingLog) {
-            throw new InvalidInformationError();
-        }
+        return (!newTrainingLog ? new InvalidInformationError : newTrainingLog);
     } catch(e) {
         if (e.message === "Invalid Error") {
             throw new InvalidInformationError();
