@@ -31,7 +31,7 @@ export default function Login() {
                 setUserID(data.id);
                 setAdmin(data.admin);
                 setFullName(data.fullName);
-                router.push("/dashboard");
+                router.push("/side");
             }
         } catch (e) {
             console.log(e);

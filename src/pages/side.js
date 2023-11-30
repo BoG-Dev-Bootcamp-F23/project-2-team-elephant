@@ -12,10 +12,13 @@ import TrainingLogCard from '@/components/TrainingLogCard';
 import UserAnimals from '@/components/UserAnimals';
 import UserTrainingLogs from '@/components/UserTrainingLogs';
 import Dashboard from './dashboard';
+import CreateAnimalCard from '@/components/CreateAnimalCard';
+import CreateTrainingLog from '@/components/CreateTrainingLog';
 import { useAuth } from '@/contexts/useAuth';
+import EditTrainingLog from '@/components/EditTrainingLog';
 
 export default function side() {
-    const { admin, fullName } = useAuth();
+    const { userID } = useAuth();
     return (
         <div className={styles.container}>
             {/* <Sidebar></Sidebar> */}
@@ -24,14 +27,17 @@ export default function side() {
             <UserCard></UserCard> */}
             {/* <Header></Header> */}
             {/* <AnimalCard></AnimalCard> */}
-            {/* <TrainingLogCard></TrainingLogCard> */}
+            <TrainingLogCard></TrainingLogCard>
             {/* <UserCard admin = {admin} fullName = {fullName}></UserCard> */}
             {/* <UsersDisplay></UsersDisplay> */}
             {/* <TrainingLogDisplay></TrainingLogDisplay> */}
             {/* <AnimalsDisplay></AnimalsDisplay> */}
             {/* <UserAnimals></UserAnimals> */}
             {/* <UserTrainingLogs></UserTrainingLogs> */}
-            <Dashboard></Dashboard>
+            {/* <Dashboard></Dashboard> */}
+            {/* <CreateAnimalCard user={userID}/> */}
+            {/* <CreateTrainingLog user={userID}/> */}
+            {/* <EditTrainingLog/> */}
         </div>
     );
 }
