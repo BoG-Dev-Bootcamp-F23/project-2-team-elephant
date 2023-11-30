@@ -7,6 +7,18 @@
   min-height: 100vh;
 } */
 
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  overflow-y: hidden;
+}
+
 .everything {
   display: flex;
   flex-direction: column;
@@ -22,10 +34,6 @@
   padding-left: 10px;
 }
 
-
-.headerContainer {
-  position: fixed
-}
 
 .trainingCardsContainer {
   display: flex;
