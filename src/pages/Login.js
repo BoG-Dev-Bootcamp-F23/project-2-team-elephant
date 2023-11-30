@@ -33,7 +33,7 @@ export default function Login() {
                 setUserID(data.id);
                 setAdmin(data.admin);
                 setFullName(data.fullName);
-                router.push("/home");
+                router.push("/side");
             }
         } catch (e) {
             setErrorMessage("User does not exist!");
