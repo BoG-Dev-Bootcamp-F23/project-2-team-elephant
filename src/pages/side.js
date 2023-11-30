@@ -38,6 +38,7 @@ export default function side() {
             {/* <CreateAnimalCard user={userID}/> */}
             {/* <CreateTrainingLog user={userID}/> */}
             {/* <EditTrainingLog/> */}
+            <Dashboard></Dashboard>
         </div>
     );
 }

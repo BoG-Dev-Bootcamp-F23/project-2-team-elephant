@@ -76,9 +76,9 @@ export default function TrainingLogCard(props) {
                     {description}
                 </div>
             </div>
-            <button className = {styles.editButton}>
+            <div className = {styles.editButton}>
                 <p className= {styles.letter}> Edit</p>
-            </button>
+            </div>
         </div>
     );
 
