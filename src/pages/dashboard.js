@@ -14,7 +14,7 @@ import TrainingLogDisplay from '@/components/TrainingLogDisplay';
 import UsersDisplay from '@/components/UsersDisplay';
 
 export default function Dashboard() {
-
+  
     const [training, setTraining] = useState(false);
     const [animalCards, setAnimalCards] = useState([]);
     const [trainingCard, setTrainingCard] = useState([]);
@@ -50,7 +50,6 @@ export default function Dashboard() {
             const rawData = await fetch("http://localhost:3000/api/admin/animals")
             const data = await rawData.json();
             setAnimalCards(data);
-            console.log(data);
             return data;
         } catch (error) {
             console.log("error happenend:" + error);
@@ -65,8 +64,6 @@ export default function Dashboard() {
             getAnimalData();
         }
     }, [training]);
-
-    console.log(trainingCard)
 
     return (
         <>
