@@ -1,8 +1,6 @@
 import React from "react";
 import styles from '..//styles/CreateTrainingLog.module.css';
 
-
-
 export default function EditTrainingLog() {
     return (
         <div className={styles.container}>
