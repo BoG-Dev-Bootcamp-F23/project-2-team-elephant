@@ -13,6 +13,8 @@ import AnimalsDisplay from '@/components/AnimalsDisplay';
 import TrainingLogDisplay from '@/components/TrainingLogDisplay';
 import UsersDisplay from '@/components/UsersDisplay';
 
+// HELLO
+
 export default function Dashboard() {
 
     const [training, setTraining] = useState(false);
