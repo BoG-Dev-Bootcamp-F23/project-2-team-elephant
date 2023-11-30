@@ -15,8 +15,6 @@ export default function UserTrainingLogs() {
             setUserTraining(data);
         }
         getUserTraining();
-        console.log(userTraining);
-        console.log(userID);
     }, [])
 
     return (

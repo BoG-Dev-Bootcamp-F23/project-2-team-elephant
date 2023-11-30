@@ -39,10 +39,9 @@ export default function Dashboard() {
             const rawData = await fetch("http://localhost:3000/api/admin/training")
             const data = await rawData.json();
             setTrainingCard(data);
-            console.log(data);
             return data;
         } catch (error) {
-            console.log("error happenend:" + error);
+            console.log("error happened:" + error);
         }
     }
 

@@ -26,7 +26,6 @@ export default function Login() {
                 })
             });
             const data = await response.json();
-            console.log(data);
             if (response.status === 200) {
                 setUserID(data.id);
                 setAdmin(data.admin);
