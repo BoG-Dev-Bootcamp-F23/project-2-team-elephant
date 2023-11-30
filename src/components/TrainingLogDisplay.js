@@ -3,7 +3,7 @@ import Header from '@/components/Header';
 import styles from '@/styles/TrainingLogDisplay.module.css';
 import { useState, useEffect } from 'react';
 
-export default function TrainingLogDisplay() {
+export default function TrainingLogDisplay(props) {
     const [ allLogs, setAllLogs ] = useState([]);
 
     useEffect(() => {
@@ -22,7 +22,7 @@ export default function TrainingLogDisplay() {
             <div className={styles.logContainer}>
                 {allLogs?.map((data) => {
                     return (
-                        <TrainingLogCard all={true} title={data.title} date={data.date} description={data.description} hours={data.hours} user={data.user} animal={data.animal}/>
+                        <TrainingLogCard all={true} setVisible = {props.setVisible} title={data.title} date={data.date} description={data.description} hours={data.hours} user={data.user} animal={data.animal}/>
                     )
                 })}
             </div>

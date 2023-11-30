@@ -202,7 +202,7 @@ export default function TrainingLogCard(props) {
             </div>
 
             <div className={styles.farRight}>
-                    <button onClick={() => {}} className={styles.editButton}>
+                    <button onClick={() => {props.setVisible("edit-training")}} className={styles.editButton}>
                         <Image src={trainingIcon} width={30} height={30} className={styles.icon}></Image>
                     </button>
             </div>

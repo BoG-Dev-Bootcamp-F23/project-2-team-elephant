@@ -4,7 +4,7 @@ import styles from '@/styles/TrainingLogDisplay.module.css';
 import { useState, useEffect } from 'react';
 import TrainingLogCard from './TrainingLogCard';
 
-export default function UserTrainingLogs() {
+export default function UserTrainingLogs(props) {
     const [ userTraining, setUserTraining ] = useState([]);
     const { userID } = useAuth();
 
@@ -24,7 +24,7 @@ export default function UserTrainingLogs() {
             <div className={styles.logContainer}>
                 {sortedUserTraining?.map((data) => {
                     return data.user === userID ? (
-                        <TrainingLogCard key={data._id} title={data.title} date={data.date} description={data.description} hours={data.hours} user={data.user} animal={data.animal}/>
+                        <TrainingLogCard key={data._id} setVisible = {props.setVisible} title={data.title} date={data.date} description={data.description} hours={data.hours} user={data.user} animal={data.animal}/>
                     ) : null;
                 })}
 

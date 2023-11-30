@@ -12,6 +12,7 @@ import User from '../../server/mongodb/models/User';
 import AnimalsDisplay from '@/components/AnimalsDisplay';
 import TrainingLogDisplay from '@/components/TrainingLogDisplay';
 import UsersDisplay from '@/components/UsersDisplay';
+import EditTrainingLog from '@/components/EditTrainingLog';
 
 export default function Dashboard() {
   
@@ -23,15 +24,17 @@ export default function Dashboard() {
     let visibleComponent;
 
     if (visible === "training-logs") {
-      visibleComponent = <UserTrainingLogs />;
+      visibleComponent = <UserTrainingLogs setVisible = {setVisible}  />;
     } else if (visible === "animals") {
       visibleComponent = <UserAnimals />;
     } else if (visible === "admin-training") {
-      visibleComponent = <TrainingLogDisplay />
+      visibleComponent = <TrainingLogDisplay setVisible = {setVisible} />
     } else if (visible === "admin-animals") {
       visibleComponent = <AnimalsDisplay />
     } else if (visible === "admin-users") {
       visibleComponent = <UsersDisplay />
+    } else if (visible === "edit-training") {
+      visibleComponent = <EditTrainingLog/>
     }
 
     async function getTrainingData() {
