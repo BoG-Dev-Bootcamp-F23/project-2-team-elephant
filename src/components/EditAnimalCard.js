@@ -5,6 +5,19 @@ import styles from '..//styles/EditAnimalCard.module.css';
 
 export default function EditAnimalCard() {
 
+    const [animalData, setAnimalData] = useState({
+        name: '',
+        breed: '',
+        hoursTrained: '',
+        
+    });
+
+    async function updateAnimalData() {
+        try {
+            const 
+        }
+    }
+
 
     return (
         <div className={styles.container}>
@@ -12,7 +25,7 @@ export default function EditAnimalCard() {
             <div className={styles.mainBody}>
                 <div className={styles.animalNameInput}>
                     <h4>Animal Name</h4>
-                    <input className={styles.animalNameInputBox} type="text" placeholder="Name" />
+                    <input className={styles.animalNameInputBox} type="text" placeholder="Name" value = {} />
                 </div>
                 <div className={styles.breedSelect}>
                 <h4> Breed </h4>
@@ -42,7 +55,7 @@ export default function EditAnimalCard() {
                 </div>
                 <div className={styles.buttonBar}>
                     <button className={styles.cancelButton}>Cancel</button>
-                    <button className={styles.saveButton}>Save</button>
+                    <button onCLick className={styles.saveButton}>Save</button>
                 </div>
             </div>
         </div>

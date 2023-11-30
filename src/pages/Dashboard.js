@@ -50,9 +50,12 @@ export default function Dashboard() {
 
     return (
         <>
-          <Header />
+        <div className={styles.everything}>
+          {/* <div className={styles.headerContainer}> */}
+            <Header className = {styles.headerContainer}/>
+          {/* </div> */}
           <div className={styles.mainContent}>
-            <Sidebar />
+            <Sidebar  setInfo={setTraining} className = {styles.sideBarContainer} />
             <div className={styles.contentContainer}>
               {training ? (
                 <div className={styles.trainingCards}>
@@ -69,6 +72,7 @@ export default function Dashboard() {
               )}
             </div>
           </div>
+        </div>
         </>
       );
 }      

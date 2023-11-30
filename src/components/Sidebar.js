@@ -7,20 +7,30 @@ import adminTraining from '@/images/adminTraining.png'
 import adminAnimals from '@/images/adminAnimals.png'
 import adminUsers from '@/images/adminUsers.png'
 import logoutIcon from '@/images/logoutIcon.png'
+import { useAuth } from '@/contexts/useAuth'
 
-export default function Sidebar({userId, userName, admin, updatePanel, activePanel}) {
+export default function Sidebar(props) {
 
-    {userName = "Sahi Pasagada"}
+    // const [isClicked, setClick] = useState();
+
+    
+    const { fullName } = useAuth();
+
+    const admin = true;
+
+
+
+
     return (
         <div className={styles.sideBarContainer}>
             
             <div className={styles.userContainer}>
-                <div className={styles.activePanel}>
+                <button className={styles.inactivePanel}>
                     <Image src={trainingIcon} width={30} height={30} className={styles.icon}></Image>
-                    Training logs</div>
-                <div className={styles.inactivePanel}>
+                    Training logs</button>
+                <button className={styles.inactivePanel}>
                     <Image src={animalIcon} width={30} height={30} className={styles.icon}></Image>
-                    Animals</div>
+                    Animals</button>
                 {/* <div className={"Training logs" === activePanel ? styles.activePanel : styles.inactivePanel} 
                     onClick={() => {
                         updatePanel("Training logs");
@@ -35,25 +45,25 @@ export default function Sidebar({userId, userName, admin, updatePanel, activePan
 
             {admin ? <div className={styles.adminContainer}>
                 <p className={styles.adminHeader}>Admin Access</p>
-                <div className={styles.inactivePanel}>
+                <button onClick={() => {props.setInfo(true)}} className={styles.inactivePanel}>
                     <Image src={adminTraining} width={30} height={30} className={styles.icon}></Image>
-                    All Training</div>
-                <div className={styles.inactivePanel}>
+                    All Training</button>
+                <button onClick={() => {props.setInfo(false)}} className={styles.inactivePanel}>
                     <Image src={adminAnimals} width={30} height={30} className={styles.icon}></Image>
-                    All Animals</div>
-                <div className={styles.inactivePanel}>
+                    All Animals</button>
+                <button className={styles.inactivePanel}>
                     <Image src={adminUsers} width={30} height={30} className={styles.icon}></Image>
-                    All Users</div>
+                    All Users</button>
             </div> : <div className={styles.noAdmin}></div>}
 
             <div className={styles.userInfoContainer}>
                 
                 <div className={styles.userLeft}>
-                    <div className={styles.userLogo}>{userName.charAt(0).toUpperCase()}</div>
+                    <div className={styles.userLogo}>{fullName.charAt(0).toUpperCase()}</div>
 
                     <div className={styles.userTopAndBottom}>
                         <div className={styles.userTop}>
-                            <div className={styles.userName}>{userName}</div>
+                            <div className={styles.userName}>{fullName}</div>
                         </div>
                         <div className={styles.userBottom}>
                             <div className={styles.userType}>{admin ? "Admin" : "User"}</div>
